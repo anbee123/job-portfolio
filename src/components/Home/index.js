@@ -2,6 +2,7 @@
 import AnimatedLetters from '../AnimatedLetters'
 import { useEffect, useState } from "react"
 import { joinPaths } from '@remix-run/router';
+import './index.scss'
 
 const Home = () => {
   const [letterClass, setLetterclass] = useState('text-animate');
