@@ -14,38 +14,35 @@ import {
 import AnimatedLetters from '../AnimatedLetters'
 
 const Home = () => {
-  const [letterClass, setLetterclass] = useState('text-animate');
+  const [isAnimate, setIsAnimate] = useState(true)
+  const letterClasss = isAnimate ? 'text-animate' : 'text-animate-hover'
 
   const nameArray = ('Anna Bui').split('')
   const jobArray = 'Full Stack Developer.'.split('')
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLetterclass('text-animate-hover');
-    }, 6000);
+      setIsAnimate(v => !v);
+    }, isAnimate ? (5 + nameArray.length + jobArray.length) * 100 : 10000);
     return () => { clearTimeout(timer); }
-  }, []);
+  }, [isAnimate]);
 
   return (
     <>
-      <Snowfall
-        color="#ffcafb"
-        snowflakeCount={50}
-      />
       <div className="container home-page">
         <div className="text-zone">
           <h1>
             <AnimatedLetters
-              letterClass={letterClass}
+              letterClass={letterClasss}
               strArray={nameArray}
-              idx={15}
+              delay={5}
             />
 
             <br />
             <AnimatedLetters
-              letterClass={letterClass}
+              letterClass={letterClasss}
               strArray={jobArray}
-              idx={30}
+              delay={15}
             />
           </h1>
 
