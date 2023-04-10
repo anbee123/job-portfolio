@@ -1,8 +1,8 @@
 
 import AnimatedLetters from '../AnimatedLetters'
 import { useEffect, useState } from "react"
-import { joinPaths } from '@remix-run/router';
 import './index.scss'
+import Snowfall from 'react-snowfall';
 
 const Home = () => {
   const [letterClass, setLetterclass] = useState('text-animate');
@@ -10,11 +10,19 @@ const Home = () => {
   const nameArray = ('Anna Bui').split('')
   const jobArray = 'Full Stack Developer.'.split('')
 
-  console.log('111 ', {nameArray})
-
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLetterclass('text-animate-hover');
+    }, 6000);
+    return () => { clearTimeout(timer); }
+  }, []);
 
   return (
     <>
+      <Snowfall
+        color="#ffcafb"
+        snowflakeCount={50}
+      />
       <div className="container home-page">
         <div className="text-zone">
           <h1>
