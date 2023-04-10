@@ -146,6 +146,11 @@
     height: auto;
     min-height: auto;
 
+    .container {
+      margin: 45px auto 0;
+      width: fit-content;
+    }
+  
     ul,
     nav {
       display: none;
@@ -156,7 +161,7 @@
       width: 100%;
       top: 0;
       left: 0;
-      background: #4D4C7D;
+      background: #f198d5;
       height: 35%;
       margin: 0;
       z-index: 2;
@@ -190,10 +195,11 @@
 
     .hamburger-icon,
     .close-icon {
+      display: block;
       position: absolute;
       top: 15px;
       right: 15px;
-      display: block;
+      cursor: pointer;
     }
   }
 }
