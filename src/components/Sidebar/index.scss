@@ -1,0 +1,21 @@
+.nav-bar {
+  background: #ffffff47;
+  width: 80px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  min-height: 300px;
+
+  .logo {
+    display: block;
+    padding: 8px 0;
+
+    img {
+      width: 100%;
+      border-radius: 100px;
+      border: 2px solid #ef00ff26;
+      box-sizing: border-box;
+    }
+  }
+}

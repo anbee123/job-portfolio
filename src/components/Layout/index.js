@@ -3,10 +3,11 @@ import './index.scss';
 import Sidebar from "../Sidebar";
 
 const Layout = () => {
-  return <div>
-    This is Layout
+  return <div className="App">
     <Sidebar />
-    <Outlet />
+    <div className="page">
+      <Outlet />
+    </div>
   </div>
 }
 export default Layout
